@@ -42,6 +42,40 @@ code --install-extension vscode-copilot-chat-cn-*.vsix --force
 
 ---
 
+## 🖼️ Quick Start Guide
+
+### Step 1: Install the Extension
+![Step 1](./assets/step/step-01-install-extension.png)
+
+### Step 2: Open Settings
+![Step 2](./assets/step/step-02-open-settings.png)
+
+### Step 3: Configure Your Model
+![Step 3](./assets/step/step-03-configure-model.png)
+
+### Step 4: Enter API Key
+![Step 4](./assets/step/step-04-api-key.png)
+
+### Step 5: Open Model Picker
+![Step 5](./assets/step/step-05-model-picker.png)
+
+### Step 6: Select Your Model
+![Step 6](./assets/step/step-06-select-model.png)
+
+### Step 7: Start Chatting
+![Step 7](./assets/step/step-07-chat-panel.png)
+
+### Step 8: Enable Thinking Mode
+![Step 8](./assets/step/step-08-thinking-mode.png)
+
+### Step 9: Advanced Provider Configuration
+![Step 9](./assets/step/step-09-provider-config.png)
+
+### Step 10: Enjoy!
+![Step 10](./assets/step/step-10-result.png)
+
+---
+
 ## 🔧 Configuration
 
 Configure your models in `chatLanguageModels.json`:

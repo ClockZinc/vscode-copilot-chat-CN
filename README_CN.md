@@ -42,6 +42,40 @@ code --install-extension vscode-copilot-chat-cn-*.vsix --force
 
 ---
 
+## 🖼️ 快速上手指南
+
+### 第 1 步：安装扩展
+![第 1 步](./assets/step/step-01-install-extension.png)
+
+### 第 2 步：打开设置
+![第 2 步](./assets/step/step-02-open-settings.png)
+
+### 第 3 步：配置模型
+![第 3 步](./assets/step/step-03-configure-model.png)
+
+### 第 4 步：输入 API Key
+![第 4 步](./assets/step/step-04-api-key.png)
+
+### 第 5 步：打开模型选择器
+![第 5 步](./assets/step/step-05-model-picker.png)
+
+### 第 6 步：选择模型
+![第 6 步](./assets/step/step-06-select-model.png)
+
+### 第 7 步：开始聊天
+![第 7 步](./assets/step/step-07-chat-panel.png)
+
+### 第 8 步：启用思维模式
+![第 8 步](./assets/step/step-08-thinking-mode.png)
+
+### 第 9 步：高级 Provider 配置
+![第 9 步](./assets/step/step-09-provider-config.png)
+
+### 第 10 步：尽情使用！
+![第 10 步](./assets/step/step-10-result.png)
+
+---
+
 ## 🔧 配置方法
 
 在 `chatLanguageModels.json` 中配置：
