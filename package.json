@@ -2,7 +2,7 @@
 	"name": "vscode-copilot-chat-cn",
 	"displayName": "Copilot Chat CN (BYOK)",
 	"description": "AI chat features powered by Copilot, with BYOK support for DeepSeek, Mimo and other OpenAI-compatible models",
-	"version": "0.44.1",
+	"version": "0.44.0",
 	"build": "1",
 	"internalAIKey": "1058ec22-3c95-4951-8443-f26c1f325911",
 	"completionsCoreVersion": "1.378.1799",
@@ -20,7 +20,7 @@
 		"url": "https://github.com/microsoft/vscode/issues"
 	},
 	"qna": "https://github.com/github-community/community/discussions/categories/copilot",
-	"icon": "assets/copilot.png",
+	"icon": "assets/logo.png",
 	"pricing": "Trial",
 	"engines": {
 		"vscode": "^1.115.0",
