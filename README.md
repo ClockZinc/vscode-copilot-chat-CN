@@ -65,8 +65,8 @@ code --install-extension vscode-copilot-chat-cn-*.vsix --force
 ### Step 7: Start Chatting
 ![Step 7](./assets/step/step-07-chat-panel.png)
 
-### Step 8: Enable Thinking Mode
-![Step 8](./assets/step/step-08-thinking-mode.png)
+### Step 8: Open Command Palette (`Ctrl+Shift+P`)
+![Step 8](./assets/step/step-08-command-palette.png)
 
 ### Step 9: Advanced Provider Configuration
 ![Step 9](./assets/step/step-09-provider-config.png)
@@ -87,7 +87,7 @@ Configure your models in `chatLanguageModels.json`:
   {
     "name": "my-deepseek",
     "vendor": "customoai",
-    "label": "🔷 DeepSeek Official",
+    "label": "DeepSeek Official",
     "apiKey": "sk-your-api-key",
     "models": [
       {
@@ -108,7 +108,7 @@ Configure your models in `chatLanguageModels.json`:
   {
     "name": "my-mimo",
     "vendor": "customoai",
-    "label": "🟢 Xiaomi MIMO",
+    "label": "Xiaomi MIMO",
     "apiKey": "your-mimo-api-key",
     "models": [
       {

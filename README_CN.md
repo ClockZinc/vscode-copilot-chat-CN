@@ -65,8 +65,8 @@ code --install-extension vscode-copilot-chat-cn-*.vsix --force
 ### 第 7 步：开始聊天
 ![第 7 步](./assets/step/step-07-chat-panel.png)
 
-### 第 8 步：启用思维模式
-![第 8 步](./assets/step/step-08-thinking-mode.png)
+### 第 8 步：打开命令面板（`Ctrl+Shift+P`）
+![第 8 步](./assets/step/step-08-command-palette.png)
 
 ### 第 9 步：高级 Provider 配置
 ![第 9 步](./assets/step/step-09-provider-config.png)
@@ -87,7 +87,7 @@ code --install-extension vscode-copilot-chat-cn-*.vsix --force
   {
     "name": "my-deepseek",
     "vendor": "customoai",
-    "label": "🔷 DeepSeek 官方",
+    "label": "DeepSeek 官方",
     "apiKey": "sk-your-api-key",
     "models": [
       {
@@ -108,7 +108,7 @@ code --install-extension vscode-copilot-chat-cn-*.vsix --force
   {
     "name": "my-mimo",
     "vendor": "customoai",
-    "label": "🟢 小米 MIMO",
+    "label": "小米 MIMO",
     "apiKey": "your-mimo-api-key",
     "models": [
       {
