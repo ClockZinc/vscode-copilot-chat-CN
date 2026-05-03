@@ -297,24 +297,36 @@ export class OpenAIEndpoint extends ChatEndpoint {
 				body['max_completion_tokens'] = body.max_tokens;
 				delete body.max_tokens;
 			}
-			// Removing max tokens defaults to the maximum which is what we want for BYOK
-			delete body.max_tokens;
-			if (!this.useResponsesApi && body.stream) {
-				body['stream_options'] = { 'include_usage': true };
-			}
+// Remove max tokens defaults to the maximum which is what we want for BYOK
+		delete body.max_tokens;
+		if (!this.useResponsesApi && body.stream) {
+			body['stream_options'] = { 'include_usage': true };
+		}
 
-			// Apply user-configured sampling parameters
-			const userTemp = this.modelMetadata.temperature;
-			const userTopP = this.modelMetadata.top_p;
-			const userTopK = this.modelMetadata.top_k;
-			if (userTemp !== undefined) {
-				body.temperature = userTemp;
+		// Apply user-configured sampling parameters
+		const userTemp = this.modelMetadata.temperature;
+		const userTopP = this.modelMetadata.top_p;
+		const userTopK = this.modelMetadata.top_k;
+		if (userTemp !== undefined) {
+			body.temperature = userTemp;
+		}
+		if (userTopP !== undefined) {
+			body.top_p = userTopP;
+		}
+		if (userTopK !== undefined) {
+			body.top_k = userTopK;
+		}
+
+		// Ensure all messages have non-null content for APIs that require it.
+		// Some APIs (Mimo, DeepSeek) return 400 "text is not set" if content is null/empty.
+		if (body.messages && Array.isArray(body.messages)) {
+			for (const msg of body.messages) {
+				if (!msg || typeof msg !== 'object') { continue; }
+				// Ensure assistant messages always have non-null content.
+				if (msg.role === 'assistant' && (!msg.content || (typeof msg.content === 'string' && msg.content.trim() === '') || (Array.isArray(msg.content) && msg.content.length === 0))) {
+					msg.content = '...';
+				}
 			}
-			if (userTopP !== undefined) {
-				body.top_p = userTopP;
-			}
-			if (userTopK !== undefined) {
-				body.top_k = userTopK;
 			}
 
 			// Determine whether to include reasoning_content in multi-turn requests.
@@ -358,6 +370,11 @@ export class OpenAIEndpoint extends ChatEndpoint {
 						// (DeepSeek requires it when thinking mode is enabled)
 						if (!msg.reasoning_content) {
 							msg.reasoning_content = 'Next step.';
+						}
+					// Ensure assistant messages always have non-null content.
+						// Some APIs (Mimo, DeepSeek) return 400 "text is not set" if content is empty.
+						if (!msg.content || (typeof msg.content === 'string' && msg.content.trim() === '') || (Array.isArray(msg.content) && msg.content.length === 0)) {
+							msg.content = '...';
 						}
 					} else {
 						// Remove reasoning_content from non-assistant messages
